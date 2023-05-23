@@ -68,7 +68,10 @@ class _CartPageState extends State<CartPage> {
                                   Column(
                                     children: [
                                       SizedBox(
-                                        width: 180,
+                                        width:
+                                            (MediaQuery.of(context).size.width -
+                                                    32) *
+                                                0.4,
                                         child: Text(
                                           widget.cartList[index].name,
                                           maxLines: 2,

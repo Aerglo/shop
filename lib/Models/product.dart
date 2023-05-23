@@ -1,12 +1,25 @@
+import 'package:hive/hive.dart';
+part 'product.g.dart';
+
+@HiveType(typeId: 1)
 class Product {
+  @HiveField(0)
   String name;
+  @HiveField(1)
   int price;
+  @HiveField(2)
   List<String> description;
+  @HiveField(3)
   String category;
+  @HiveField(4)
   bool isSelected = false;
+  @HiveField(5)
   bool isFavourited = false;
+  @HiveField(6)
   int sellCounts = 0;
+  @HiveField(7)
   int productId;
+  @HiveField(8)
   String? imageAsset;
   Product({
     required this.name,

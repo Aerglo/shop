@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:hive/hive.dart';
 import 'package:shop/Constants/constant.dart';
 import 'package:shop/Models/product.dart';
 import 'package:shop/Models/user.dart';
@@ -113,7 +112,24 @@ class _FinishShopState extends State<FinishShop> {
                       ),
                     );
                     setState(() {
+                      User currentUser = Hive.box<User>(Constants.boxName)
+                          .values
+                          .toList()
+                          .where((element) =>
+                              element.username == User.currentUsername)
+                          .first;
+                      int index = Hive.box<User>(Constants.boxName)
+                          .values
+                          .toList()
+                          .indexOf(currentUser);
+                      currentUser.shoppingHistory
+                          .addAll({DateTime.now(): Product.shoppingCartMap});
+                      Hive.box<User>(Constants.boxName)
+                          .putAt(index, currentUser);
                       Product.shoppingCartMap = {};
+                      for (int i = 0; i < Product.productList.length; i++) {
+                        Product.productList[i].isSelected = false;
+                      }
                     });
                     Navigator.push(
                       context,

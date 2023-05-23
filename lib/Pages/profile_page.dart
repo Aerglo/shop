@@ -41,6 +41,38 @@ class _ProfilePageState extends State<ProfilePage> {
                     SizedBox(height: MediaQuery.of(context).size.height * 0.06),
                     GestureDetector(
                       onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ShoppingHistory(),
+                          ),
+                        );
+                      },
+                      child: Directionality(
+                        textDirection: TextDirection.rtl,
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.history,
+                              color: Constants.primaryColor,
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.02,
+                            ),
+                            Text(
+                              'سابقه خرید',
+                              style: TextStyle(
+                                color: Constants.primaryColor,
+                                fontFamily: 'Vazir',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                    GestureDetector(
+                      onTap: () {
                         setState(() {
                           Constants.isLoggedIn = false;
                           User.currentUsername = '';
@@ -67,7 +99,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

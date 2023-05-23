@@ -95,10 +95,12 @@ class _FavoritePageState extends State<FavoritePage> {
                                 ),
                               ),
                               SizedBox(
-                                width: 180,
+                                width:
+                                    (MediaQuery.of(context).size.width - 32) *
+                                        0.4,
                                 child: Text(
                                   Constants.favoriteList[index].name,
-                                  maxLines: 2,
+                                  maxLines: 3,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(fontFamily: 'Vazir'),
                                 ),

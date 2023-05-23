@@ -3,7 +3,6 @@ import 'package:shop/Models/product.dart';
 import 'package:shop/Pages/finish_shop.dart';
 import 'package:shop/Pages/login_page.dart';
 import 'package:shop/Constants/constant.dart';
-import 'package:shop/Pages/root_page.dart';
 
 class ShoppingPage extends StatefulWidget {
   const ShoppingPage({super.key});
@@ -23,7 +22,6 @@ class _ShoppingPageState extends State<ShoppingPage> {
     return sum;
   }
 
-  int _selectedRadio = 0;
   bool onlinePayment = true;
   bool presentPayment = false;
 

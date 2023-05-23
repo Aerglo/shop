@@ -32,7 +32,7 @@ class _RootPageState extends State<RootPage> {
       FavoritePage(),
       CartPage(cartList: myCart),
       const SupportPage(),
-      const ProfilePage(),
+      ProfilePage(),
     ];
   }
 
@@ -47,10 +47,7 @@ class _RootPageState extends State<RootPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
-                Icons.notifications,
-                color: Constants.descriptionColor,
-              ),
+              const SizedBox(width: 0),
               Text(
                 appBarTitle,
                 style: TextStyle(

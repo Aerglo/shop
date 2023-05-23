@@ -3,7 +3,6 @@ import 'package:hive/hive.dart';
 import 'package:shop/Constants/constant.dart';
 import 'package:shop/Models/user.dart';
 import 'package:shop/Pages/login_page.dart';
-import 'package:shop/Pages/shopping_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -16,7 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  void State() async {
+  void state() async {
     Constants.isLoggedIn = true;
     var box = await Hive.openBox<User>(Constants.boxName);
     User.usersList = box.values.toList();
@@ -177,7 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     );
 
                     setState(() {
-                      State();
+                      state();
                     });
                     Navigator.pop(context);
                     Navigator.pop(context);

@@ -137,6 +137,8 @@ class _CategoryPageState extends State<CategoryPage> {
                                       productList[index * 2].isFavourited;
                                 }
                               }
+                              Constants.favoriteList =
+                                  Product.getFavouriteProducts();
                             });
                           },
                         ),
@@ -250,6 +252,8 @@ class _CategoryPageState extends State<CategoryPage> {
                                       productList[index * 2 + 1].isFavourited;
                                 }
                               }
+                              Constants.favoriteList =
+                                  Product.getFavouriteProducts();
                             });
                           },
                         ),

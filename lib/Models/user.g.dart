@@ -21,7 +21,7 @@ class UserAdapter extends TypeAdapter<User> {
       ..password = fields[1] as String
       ..email = fields[2] as String
       ..shoppingHistory = (fields[3] as Map).map((dynamic k, dynamic v) =>
-          MapEntry(k as DateTime, (v as List).cast<Product>()));
+          MapEntry(k as DateTime, (v as Map).cast<Product, int>()));
   }
 
   @override

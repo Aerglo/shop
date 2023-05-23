@@ -3,7 +3,6 @@ import 'package:page_transition/page_transition.dart';
 import 'package:shop/Models/product.dart';
 import 'package:shop/Pages/category_page.dart';
 import 'package:shop/Pages/product_page.dart';
-import 'package:shop/Widgets/widgets.dart';
 import 'package:shop/Constants/constant.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,38 +29,17 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 40.0),
-              child: Center(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  width: size.width * 0.9,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    borderRadius: BorderRadius.circular(24.0),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.search,
-                        color: Constants.descriptionColor,
-                      ),
-                      const SearchField(),
-                    ],
-                  ),
-                ),
-              ),
-            ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               margin: const EdgeInsets.symmetric(vertical: 16),
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(18),
-                color: Colors.grey.shade200,
+                color: Colors.white,
               ),
               height: 150,
               width: MediaQuery.of(context).size.width - 32,
+              child: Image.asset('assets/images/hyperorgano-logo.png'),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
