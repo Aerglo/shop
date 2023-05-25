@@ -35,7 +35,6 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(18),
-                color: Colors.white,
               ),
               height: 150,
               width: MediaQuery.of(context).size.width - 32,
