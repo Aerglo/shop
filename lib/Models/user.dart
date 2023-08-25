@@ -12,6 +12,6 @@ class User extends HiveObject {
   late String email;
   @HiveField(3)
   Map<DateTime, Map<Product, int>> shoppingHistory = {};
-  static String currentUsername = 'Aerglo';
+  static String currentUsername = 'Admin';
   static List<User> usersList = [];
 }
